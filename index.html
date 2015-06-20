@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS-Plus</title>
+		<script type="text/javascript" src="main.js" ></script>
+	</head>
+	<body>
+		<script>
+			var a = P.arr("100:90,10:5:80");
+				b = P.arr("1:0.5:10"),
+				c = P.arr("T:-3:C"),
+				d = P.arr("3:11, a:n ,二十:三十八","text$1-$index"),
+				e = P.arr("1:6", function(index, $1){
+					//return {k:"I"+index, v:$1*2}
+					return P.arr("a:d","$1"+$1)
+				});
+				f = P.arr("三百万二千一:-50000:三十万八千六");
+				document.writeln(P.arr("C:G, k:f",'<a href="#$index">$1</a>').join("<br/>"));
+				console.log(a, b, c, d, e, f);
+				var val = P.assign([
+					["a",true],
+					["b",false]
+				]);
+				var arr1 = P.arr("1:8");
+				var b = P.inArr(arr1,'$1==2');
+				P.forArr(arr1,'$1*3',true);
+				var c = P.forArr(arr1, function(index, $1){
+					return index+$1;
+				});
+		</script>
+	</body>
+</html>
