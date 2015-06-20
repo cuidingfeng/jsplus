@@ -246,29 +246,59 @@
 		log('无匹配的值');
 		return null;
 	};
-	P.inArr = function(arr, fn){
-		fn  = getFnFormat(fn || fnDformat);
+	/*
+	* function inArr;
+	* arr: 循环处理的数组
+	* fn: 对每个数组值检测的函数或表达示，返回逻辑值
+	* reVal: 是否返回匹配的数组值，默认为false,返回是否有匹配。
+	*/
+	P.inArr = function(arr, fn, reVal){
 		if(!(arr instanceof Array)){
 			log('参数类型错误，期望是Array');
 			return null;
 		}
-		for(var i=0;i<arr.length;i++){
-			if(arr[i].length==1 || arr[i].length>1 && arr[i][1]){
-				return vals[i][0];
+		if(!(fn instanceof Function)){
+			var fnstr = fn;
+			fn = function(index, val, size){
+					var _fnstr = fnstr.replace("$index",index).replace("$1",val).replace("$size",size);
+					return (new Function("return "+_fnstr))()
 			}
 		}
+		for(var i=0,len=arr.length;i<len;i++){
+			if(fn(i,arr[i],len)){
+				return reVal?arr[i]:true;
+			}
+		}
+		return reVal?undefined:false;
 	};
-	P.forArr = function(arr, fn){
-		fn  = getFnFormat(fn || fnDformat);
+
+	/*
+	* function forArr;
+	* arr: 循环处理的数组
+	* fn: 对每个数组值检测的函数或表达示，返回值作为新数组对应位置的值
+	* old: 是否修改原数组，默认为false,不修改原数组。
+	*/
+	P.forArr = function(arr, fn, old){
 		if(!(arr instanceof Array)){
 			log('参数类型错误，期望是Array');
 			return null;
 		}
-		for(var i=0;i<arr.length;i++){
-			if(arr[i].length==1 || arr[i].length>1 && arr[i][1]){
-				return vals[i][0];
+		var newArr = [], nVal;
+		if(!(fn instanceof Function)){
+			var fnstr = fn;
+			fn = function(index, val, size){
+					var _fnstr = fnstr.replace("$index",index).replace("$1",val).replace("$size",size);
+					return (new Function("return "+_fnstr))()
 			}
 		}
+		for(var i=0,len=arr.length;i<len;i++){
+			nVal = fn(i,arr[i],len);
+			newArr.push(nVal);
+			if(old){
+				arr[i] = nVal;
+			}
+		}
+		return newArr;
 	};
 	win.P = P;
 }(window)

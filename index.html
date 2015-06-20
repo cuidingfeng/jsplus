@@ -17,7 +17,7 @@
 				});
 				f = P.arr("三百万二千一:-50000:三十万八千六");
 				document.writeln(P.arr("C:G, k:f",'<a href="#$index">$1</a>').join("<br/>"));
-				console.log(a, b, c, d, e, f);
+				//console.log(a, b, c, d, e, f);
 				var val = P.assign([
 					["a",true],
 					["b",false]
@@ -28,6 +28,15 @@
 				var c = P.forArr(arr1, function(index, $1){
 					return index+$1;
 				});
+
+				/*生成一年的日期*/
+				var days = P.arr("1:12", function(index, $1){
+						return [$1, P.assign([
+							[P.arr("1:31"), P.inArr([1,3,5,7,8,10,12], '$1=='+$1)],
+							[P.arr("1:30"), P.inArr([4,6,9,11], '$1=='+$1)],
+							[P.arr("1:28"), P.inArr([2], '$1=='+$1)]
+						])]
+				})
 		</script>
 	</body>
 </html>
