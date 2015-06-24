@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>JS-Plus</title>
-		<script type="text/javascript" src="main.js" ></script>
+		<script type="text/javascript" src="main.min.js" ></script>
 	</head>
 	<body>
 		<script>
 			var a = P.arr("100:90,10:5:80");
 				b = P.arr("1:0.5:10"),
-				c = P.arr("T:-3:C"),
+				c = P.arr("W:-2:B"),
 				d = P.arr("3:11, a:n ,二十:三十八","text$1-$index"),
 				e = P.arr("1:6", function(index, $1){
 					//return {k:"I"+index, v:$1*2}
@@ -17,7 +17,7 @@
 				});
 				f = P.arr("三百万二千一:-50000:三十万八千六");
 				document.writeln(P.arr("C:G, k:f",'<a href="#$index">$1</a>').join("<br/>"));
-				//console.log(a, b, c, d, e, f);
+				console.log(a, b, c, d, e, f);
 				var val = P.assign([
 					["a",true],
 					["b",false]
@@ -37,6 +37,7 @@
 							[P.arr("一:二十八","$1日"), P.inArr([2], '$1=='+(index+1))]
 						])]
 				})
+				document.writeln(JSON.stringify(days));
 		</script>
 	</body>
 </html>
