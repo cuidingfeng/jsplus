@@ -20,5 +20,8 @@
     "url": "https://github.com/cuidingfeng/jsplus/issues",
     "email": "admin@baiketupu.com"
   },
-  "homepage": "https://github.com/cuidingfeng/jsplus"
+  "homepage": "https://github.com/cuidingfeng/jsplus",
+  "devDependencies": {
+    "qunitjs": "^1.18.0"
+  }
 }
