@@ -502,5 +502,25 @@ P.forArr = (arr, fn, old) ->
 
 #end P.forArr
 
-#将静态对象添加到顶级作用域上
-this.P = P
+
+#兼容CMD
+if "function" is typeof require and
+	   "object" is typeof module and
+	   module and
+	   module.id and
+	   "object" is typeof exports and
+	   exports
+
+  module.exports = P
+
+#兼容AMD
+else if "function" is typeof define and define.amd
+    define 'jsplus', [], () ->
+        return P
+
+    define () ->
+        return P
+
+else
+    #将静态对象添加到顶级作用域上
+		this.P = P

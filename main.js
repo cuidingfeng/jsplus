@@ -385,7 +385,18 @@
     return newArr;
   };
 
-  this.P = P;
+  if ("function" === typeof require && "object" === typeof module && module && module.id && "object" === typeof exports && exports) {
+    module.exports = P;
+  } else if ("function" === typeof define && define.amd) {
+    define('jsplus', [], function() {
+      return P;
+    });
+    define(function() {
+      return P;
+    });
+  } else {
+    this.P = P;
+  }
 
 }).call(this);
 

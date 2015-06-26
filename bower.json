@@ -1,0 +1,27 @@
+{
+  "name": "jsplus",
+  "version": "0.0.1",
+  "description": "JsPlus的定位是一个JavaScript库，目标是提供一系列简化JavaScript操作的基础方法，让开发专注于业务逻辑",
+  "main": "main.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "javascript",
+    "library"
+  ],
+  "authors": [
+    "cuidingfeng"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cuidingfeng/jsplus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
