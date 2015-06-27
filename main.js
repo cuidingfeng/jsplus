@@ -96,12 +96,14 @@
         if (!ss[1]) {
           log('数列递增字符格式不正确，必须为数字');
           ss[1] = 0;
+          tp1 = -1;
         }
       }
       tp1 = getType(ss[0]);
       if (tp1 !== getType(ss[2])) {
         log('数列起始值和结束值类型不一致');
         ss[1] = 0;
+        tp1 = -1;
       }
       if (tp1 === -1) {
         log('数列格式暂时不支持');
@@ -141,10 +143,10 @@
     var i, reArr;
     reArr = [];
     if (param[1] === 0 || param[3] === -1) {
-      if (param[0]) {
+      if (param[0] != null) {
         reArr.push(param[0]);
       }
-      if (param[2]) {
+      if (param[2] != null) {
         reArr.push(param[2]);
       }
     } else {

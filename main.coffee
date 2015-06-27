@@ -117,6 +117,7 @@ getParam = (str = '') ->
 			if not ss[1]
 				log '数列递增字符格式不正确，必须为数字'
 				ss[1] = 0
+				tp1 = -1
 
 		#获取起始值的字符类型
 		tp1 = getType ss[0]
@@ -125,6 +126,7 @@ getParam = (str = '') ->
 		if tp1 isnt getType ss[2]
 			log '数列起始值和结束值类型不一致'
 			ss[1] = 0
+			tp1 = -1
 
 		#如果字符类型为-1，则为不支持的类型，把递增值设为0
 		if tp1 is -1
@@ -164,8 +166,8 @@ getNums = (param) ->
 
 	#如果递增值为 0，或者字符类型不支持，则原样返回存在的起始值和结束值
 	if param[1] is 0 or param[3] is -1
-		reArr.push param[0] if param[0]
-		reArr.push param[2] if param[2]
+		reArr.push param[0] if param[0]?
+		reArr.push param[2] if param[2]?
 	else
 		i = param[0]
 
