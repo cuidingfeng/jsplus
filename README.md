@@ -6,12 +6,12 @@ JS基础扩展库
 
 ##目前支持的方法，具体用法请感受下面的例子或查看源码main.coffee
 
-* [P.arr](//cuidingfeng/jsplus/wiki/arr):       按指定规则生成一个一维数组
-* [P.cn2num](//cuidingfeng/jsplus/wiki/cn2num): 把中文数字转换为数值
-* [P.num2cn](//cuidingfeng/jsplus/wiki/num2cn): 把自然数转换为中文数字
-* [P.assign](//cuidingfeng/jsplus/wiki/assign): 按条件返回值
-* [P.inArr](//cuidingfeng/jsplus/wiki/inArr):   按条件查找数组
-* [P.forArr](//cuidingfeng/jsplus/wiki/forArr): 按条件处理数组的每一项
+* [P.arr](//github.com/cuidingfeng/jsplus/wiki/arr):       按指定规则生成一个一维数组
+* [P.cn2num](//github.com/cuidingfeng/jsplus/wiki/cn2num): 把中文数字转换为数值
+* [P.num2cn](//github.com/cuidingfeng/jsplus/wiki/num2cn): 把自然数转换为中文数字
+* [P.assign](//github.com/cuidingfeng/jsplus/wiki/assign): 按条件返回值
+* [P.inArr](//github.com/cuidingfeng/jsplus/wiki/inArr):   按条件查找数组
+* [P.forArr](//github.com/cuidingfeng/jsplus/wiki/forArr): 按条件处理数组的每一项
 
 ***
 
