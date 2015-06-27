@@ -2,7 +2,14 @@
 
 JS基础扩展库
 
-开发进行中……
+刚开始开发，正在进行中，目前完成的功能只有6个，欢迎大家持续关注。
+
+查看API请到Wiki, [查看Wiki](//github.com/cuidingfeng/jsplus/wiki/)
+
+发现bug请到这里反馈, [反馈bug](//github.com/cuidingfeng/jsplus/issues/1)
+
+有好的建议请到这里, [提供建议](//github.com/cuidingfeng/jsplus/issues/2)
+
 
 ##目前支持的方法，具体用法请感受下面的例子或查看源码main.coffee
 
