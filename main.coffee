@@ -35,7 +35,7 @@ regs =
               \.[0-9]+
               ([eE][+-][1-9][0-9]*)?
             $
-            ///
+          ///
 
 	#小写字母
 	lowercase: /^[a-z]$/
@@ -74,7 +74,7 @@ conversion =
 
 #开启debug时，在控制台打印错误信息
 log = (str) ->
-	 console.log "JS-Plus:" + str if P.debug
+	 (if this.console? and console.log? then console.log else alert) "JS-Plus:" + str if P.debug
 
 #生成包装函数，fn可以为function或格式化字符串
 getFnFormat = (fn) ->
@@ -204,11 +204,11 @@ formatArr = (arr, cb) ->
 ###
 #========================================
 # 静态对象对外提供的方法
-# arr: 		按指定规则生成一个一维数组
+# arr:    按指定规则生成一个一维数组
 # cn2num: 把中文数字转换为数值
 # num2cn: 把自然数转换为中文数字
 # assign: 按条件返回值
-# inArr: 	按条件查找数组
+# inArr:  按条件查找数组
 # forArr: 按条件处理数组的每一项
 #========================================
 ###

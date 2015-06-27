@@ -64,7 +64,7 @@
 
   log = function(str) {
     if (P.debug) {
-      return console.log("JS-Plus:" + str);
+      return ((this.console != null) && (console.log != null) ? console.log : alert)("JS-Plus:" + str);
     }
   };
 
@@ -184,11 +184,11 @@
   /*
    *========================================
    * 静态对象对外提供的方法
-   * arr: 		按指定规则生成一个一维数组
+   * arr:    按指定规则生成一个一维数组
    * cn2num: 把中文数字转换为数值
    * num2cn: 把自然数转换为中文数字
    * assign: 按条件返回值
-   * inArr: 	按条件查找数组
+   * inArr:  按条件查找数组
    * forArr: 按条件处理数组的每一项
    *========================================
    */
