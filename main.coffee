@@ -35,6 +35,10 @@ regs =
               \.[0-9]+
               ([eE][+-][1-9][0-9]*)?
             $
+						  |
+						^
+						  0
+						$
           ///
 
 	#小写字母
@@ -74,7 +78,7 @@ conversion =
 
 #开启debug时，在控制台打印错误信息
 log = (str) ->
-	 (if this.console? and console.log? then console.log else alert) "JS-Plus:" + str if P.debug
+	 (if window.console? and console.log? then console.log else alert) "JS-Plus:" + str if P.debug
 
 #生成包装函数，fn可以为function或格式化字符串
 getFnFormat = (fn) ->

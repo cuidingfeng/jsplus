@@ -21,7 +21,7 @@
   P.debug = true;
 
   regs = {
-    number: /^[+-]?[1-9][0-9]*(\.[0-9]+)?([eE][+-][1-9][0-9]*)?$|^[+-]?0?\.[0-9]+([eE][+-][1-9][0-9]*)?$/,
+    number: /^[+-]?[1-9][0-9]*(\.[0-9]+)?([eE][+-][1-9][0-9]*)?$|^[+-]?0?\.[0-9]+([eE][+-][1-9][0-9]*)?$|^0$/,
     lowercase: /^[a-z]$/,
     uppercase: /^[A-Z]$/,
     numberCn: /^[零一二三四五六七八九十百千万亿]+$/
@@ -64,7 +64,7 @@
 
   log = function(str) {
     if (P.debug) {
-      return ((this.console != null) && (console.log != null) ? console.log : alert)("JS-Plus:" + str);
+      return ((window.console != null) && (console.log != null) ? console.log : alert)("JS-Plus:" + str);
     }
   };
 
