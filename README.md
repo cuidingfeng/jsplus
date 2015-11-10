@@ -2,6 +2,8 @@
 
 JS基础扩展库，只对ECMAScript5层抽象操作做包装，兼容AMD、CMD规范加载，支持所有浏览器、Node等兼容ECMAScript5的JS宿主环境。
 
+## 欢迎关注父集 [JsTools](https://github.com/cuidingfeng/jstools)
+
 刚开始开发，正在进行中，目前完成的功能只有6个，欢迎大家持续关注。
 
 查看API请到Wiki, [查看Wiki](//github.com/cuidingfeng/jsplus/wiki/)
